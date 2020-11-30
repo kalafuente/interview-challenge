@@ -5,13 +5,17 @@ const roundedCorners = {
 export enum Color {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
-    WHITE = 'white'
+    WHITE = 'white',
+    BLUE = 'blue',
+    GRAYLIGHT = 'gray-light'
 }
 
 const colors = {
     [Color.SECONDARY]: '#6C8EDB',
     [Color.PRIMARY]: '#FF8800',
     [Color.WHITE]: '#FFF',
+    [Color.GRAYLIGHT]: '#FAFAFA',
+    [Color.BLUE]: '#4d649b',
 }
 
 /*
@@ -28,7 +32,6 @@ small     13px Open Sans
 smaller   11px Open Sans
 smallest  10px Open Sans
 micro      9px Open Sans
-nano       7px Open Sans
 */
 
 export enum Font {
@@ -58,7 +61,6 @@ export enum FontSize {
     SMALLER = 'smaller',
     SMALLEST = 'smallest',
     MICRO = 'micro',
-    NANO = 'nano',
 }
 const fontSize = {
     [FontSize.MEGA]: '2.469rem',
@@ -73,7 +75,6 @@ const fontSize = {
     [FontSize.SMALLER]: '0.675rem',
     [FontSize.SMALLEST]: '0.632rem',
     [FontSize.MICRO]: '0.556rem',
-    [FontSize.NANO]: '0.457rem',
 }
 
 export enum FontWeight {
@@ -113,15 +114,38 @@ export const breakpointSizes = {
         max: 200000,
     },
 }
+export const device = {
+    xs: {
+        min: `(min-width: 0px)`,
+        max: `(max-width: 600px)`
+    },
+    sm: {
+        min: `(min-width: 600px)`,
+        max: `(max-width: 768px)`
+    },
+    md: {
+        min: `(min-width: 768)`,
+        max: `(max-width: 992px)`
+    },
+    lg: {
+        min: `(min-width: 992px)`,
+        max: `(max-width: 1440px)`
+    },
+
+    xl: {
+        min: `(min-width: 1440px)`,
+        max: `(max-width: 2000px)`
+    },
+};
 
 const theme = {
     roundedCorners,
     breakpointSizes,
-    breakpoints: ['576px', '767px', '992px', '1200px'],
     colors,
     font,
     fontSize,
     fontWeight,
+    device
 }
 
 export default theme
