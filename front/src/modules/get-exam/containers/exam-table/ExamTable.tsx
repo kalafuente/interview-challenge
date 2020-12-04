@@ -1,29 +1,13 @@
 import React from "react"
 import GetExam from "../GetExam"
-import { ExamName, Row, ExamButton, ExamContainer } from './ExamTableStyles';
+import { ExamName, Row, ExamButton, ExamContainer, NoExam } from './ExamTableStyles';
 import Router from 'next/router';
 
 type ExamTableProps = {
+    list: { name: string, id: string }[],
 }
 
-const ExamTable: React.FunctionComponent<ExamTableProps> = ({ }) => {
-    var list: { name: string, id: string }[] = [
-        {
-            name: 'Examen de religion -  Orígenes del mito universal',
-            id: '1'
-        },
-
-        {
-            name: 'Examen de matematicas - Ecuaciones logarítmicas',
-            id: '2'
-        },
-
-        {
-            name: 'Examen de religion',
-            id: '3'
-        },
-    ]
-
+const ExamTable: React.FunctionComponent<ExamTableProps> = ({ list }) => {
     return (
         <React.Fragment>
             <Row style={{
@@ -37,7 +21,7 @@ const ExamTable: React.FunctionComponent<ExamTableProps> = ({ }) => {
                 </ExamContainer>
             </Row>
 
-            {
+            {!!list.length &&
                 list.map(function (item, i) {
                     return (
                         <Row index={i} key={i}>
@@ -49,6 +33,8 @@ const ExamTable: React.FunctionComponent<ExamTableProps> = ({ }) => {
                     );
                 })
             }
+
+            {!!!list.length && <NoExam>¡Felicidades! No tienes exámenes pendientes</NoExam>}
         </React.Fragment >
     )
 }

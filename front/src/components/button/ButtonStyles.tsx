@@ -7,6 +7,7 @@ export const ButtonStyled = styled('button') <{ styleType: string }>`
   font-weight: ${props => props.theme.fontWeight[FontWeight.SEMIBOLD]};
   border-radius: ${props => props.theme.roundedCorners.medium};
   box-shadow: 0 2px 1px 0 rgba(64, 64, 64, 0.15);
+  font-family: 'Open Sans';
 
   ${props => props.styleType == ButtonTypes.PRIMARY && css`
       background: ${props => props.theme.colors[Color.PRIMARY]};

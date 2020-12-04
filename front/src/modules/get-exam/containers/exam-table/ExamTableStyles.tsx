@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Box } from '@rebass/grid'
-import { FontSize, Color } from '../../../../components/theme/Theme';
+import { FontSize, Color, FontWeight } from '../../../../components/theme/Theme';
 export const ExamContainer = styled('div') <{}>`
     display: flex;
     align-items: center;
@@ -60,17 +60,18 @@ export const ExamButton = styled('div') <{}>`
 
 export const Row = styled(Box)`
     display: flex;
-    font-family: sans-serif;
+    font-weight: ${props => props.theme.fontWeight[FontWeight.SEMIBOLD]};
     font-size:  ${props => props.theme.fontSize[FontSize.BASE]};
     background: ${props => props.index % 2 === 0 ? props.theme.colors[Color.GRAYLIGHT] : props.theme.colors[Color.WHITE]};
-    @media ${props => props.theme.device.xs.min}{
-      }
-    @media ${props => props.theme.device.sm.min}{
-      }
-    @media ${props => props.theme.device.md.min}{
-      }
-    @media ${props => props.theme.device.lg.min}{
-      }
-    @media ${props => props.theme.device.xl.min}{
-    }
   `;
+
+export const NoExam = styled(Box)`
+    margin-top: 21px;
+    display: flex;
+    font-size:  ${props => props.theme.fontSize[FontSize.BASE]};
+    justify-content: center;
+    font-weight: ${props => props.theme.fontWeight[FontWeight.SEMIBOLD]};
+    @media ${props => props.theme.device.xs.max}{
+        margin-top: 15px;
+      }
+`;
