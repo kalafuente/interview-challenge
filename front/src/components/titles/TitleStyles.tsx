@@ -17,5 +17,7 @@ export const SubtitleStyled = styled('p') <{}>`
 export const ContainerStyled = styled('div') <{}>`
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
 `;

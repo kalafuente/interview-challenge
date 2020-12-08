@@ -10,22 +10,31 @@ export const SET_EXAMS: string = 'SET_EXAMS'
 export type Exam = {
     name: string, id: string
 }
-export type examsEstate = {
-    exams: [Exam] | null;
-    selectedExam: {
-        id: string | number;
-        description: string,
-        questions: []
-    } | null;
+export type SelectedExam = {
+    id: string | number;
+    title: string;
+    description: string,
+    questions: [Question]
 }
 
-const initState: examsEstate = {
+export type Question = {
+    type: string,
+    question: string;
+    options?: [String]
+}
+
+export type ExamsEstate = {
+    exams: [Exam] | null;
+    selectedExam: SelectedExam | null
+}
+
+const initState: ExamsEstate = {
     exams: null,
     selectedExam: null,
 }
 
 //reducer
-export function exams(state: examsEstate = initState, action: ActionCreator): examsEstate {
+export function exams(state: ExamsEstate = initState, action: ActionCreator): ExamsEstate {
     switch (action.type) {
         case 'SET_EXAM':
             return {
@@ -33,6 +42,7 @@ export function exams(state: examsEstate = initState, action: ActionCreator): ex
                 exams: state.exams,
                 selectedExam: {
                     id: action.id,
+                    title: action.title,
                     description: action.description,
                     questions: action.questions,
                 }
@@ -49,9 +59,10 @@ export function exams(state: examsEstate = initState, action: ActionCreator): ex
 }
 
 // action creators
-export const setExam = (id: string, exam: { description: string, questions: [] }) => ({
+export const setExam = (id: string, exam: { title: string, description: string, questions: [] }) => ({
     type: SET_EXAM,
     id: id,
+    title: exam.title,
     description: exam.description,
     questions: exam.questions,
 })

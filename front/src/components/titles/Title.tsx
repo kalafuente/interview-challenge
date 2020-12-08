@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContainerStyled, TitleStyled } from './TitleStyles';
+import { ContainerStyled, SubtitleStyled, TitleStyled } from './TitleStyles';
 
 export enum ButtonTypes {
     PRIMARY = 'primary',
@@ -20,6 +20,9 @@ export class Title extends React.PureComponent<TitleProps>  {
                     <TitleStyled>
                         {title}
                     </TitleStyled>
+                    {subtitle && <SubtitleStyled>
+                        {subtitle}
+                    </SubtitleStyled>}
                 </ContainerStyled>
             </React.Fragment>
         );

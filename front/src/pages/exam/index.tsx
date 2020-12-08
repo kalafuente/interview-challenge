@@ -2,17 +2,10 @@ import React from 'react';
 import { connect, useDispatch } from 'react-redux'
 import Exam from "../../modules/exam/containers/Exam"
 
-type ExamProps = {
-}
-
-const ExamPage: React.FunctionComponent<ExamProps> = ({ }) => {
-    return <div>
+const ExamPage: React.FunctionComponent<{}> = ({ }) => {
+    return <React.Fragment>
         <Exam />
-        <img src="/fondo.svg" alt="" />
-        <img src="/logo.png" alt="" />
-
-    </div>
-
+    </React.Fragment>
 }
 
 export default connect()(ExamPage)

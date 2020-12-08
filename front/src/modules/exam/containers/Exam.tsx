@@ -1,20 +1,25 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { examsEstate } from '../../get-exam/ducks';
+import ExamData from './exam-data/ExamData';
+import Footer from './Footer/Footer';
+import { SelectedExam } from '../../get-exam/ducks/index';
+import { ExamContainer } from './ExamStyles';
 
 type ExamProps = {
 }
 
 const Exam: React.FunctionComponent<ExamProps> = ({ }) => {
-    const exam = useSelector((state) => state);
-    useEffect(() => {
-        console.log("en el cliente", exam)
-    }, [exam]);
-
+    const exam: SelectedExam = useSelector((state) => state.exams.selectedExam);
+    console.log(exam)
     return (
         <React.Fragment>
-            holis
+            <ExamContainer>
+                <ExamData title={exam.title} description={exam.description}
+                    questions={exam.questions}
+                />
+                <Footer />
+            </ExamContainer>
         </React.Fragment>)
 }
 
