@@ -1,19 +1,17 @@
-import React, { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux";
+import React from "react"
+import { useSelector } from "react-redux";
 import { Title } from "../components/titles/Title"
 import ExamTable from "../modules/get-exam/containers/exam-table/ExamTable"
-import { getExams } from '../modules/get-exam/ducks/index';
+import { StateType } from "../modules/get-exam/ducks";
 
-const InterviewChallengeApp: React.FunctionComponent<{}> = ({ }) => {
-    const state = useSelector((state) => state);
+const ListOfExamsPage: React.FunctionComponent<{}> = ({ }) => {
+    const state = useSelector((state: StateType) => state);
     return <div>
         <Title title='Listado de examenes pendientes' />
-        <ExamTable list={state.exams.exams} />
+        <ExamTable exams={state.exams.exams} />
     </div>
 }
-
-
-export default InterviewChallengeApp
+export default ListOfExamsPage
 
 
 

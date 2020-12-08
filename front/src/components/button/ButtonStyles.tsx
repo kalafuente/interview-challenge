@@ -8,7 +8,8 @@ export const ButtonStyled = styled('button') <{ styleType: string }>`
   border-radius: ${props => props.theme.roundedCorners.medium};
   box-shadow: 0 2px 1px 0 rgba(64, 64, 64, 0.15);
   font-family: 'Open Sans';
-
+  cursor: pointer;
+  
   ${props => props.styleType == ButtonTypes.PRIMARY && css`
       background: ${props => props.theme.colors[Color.PRIMARY]};
       color: ${props => props.theme.colors[Color.WHITE]};

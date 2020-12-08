@@ -12,12 +12,11 @@ type ExamProps = {
 
 const ExamData: React.FunctionComponent<ExamProps> = ({ title, description, questions }) => {
     return (
-        <React.Fragment>
-            <TitleContainer>
-                <Title title={title} subtitle={description} />
-                <ExamForm questions={questions} />
-            </TitleContainer>
-        </React.Fragment>)
+        <TitleContainer>
+            <Title title={title} subtitle={description} />
+            <ExamForm questions={questions} />
+        </TitleContainer>
+    )
 }
 
 export default ExamData

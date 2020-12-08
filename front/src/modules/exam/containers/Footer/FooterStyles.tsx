@@ -15,7 +15,7 @@ export const Icon = styled('img') <{}>`
         height: 260px;
     }
     @media ${props => props.theme.device.lg.min}{
-        margin: 60px 119px 161px 207px;
+        margin: 60px 132px 334px 345px;
         width: 370px;
         height: 458px;
       }
@@ -29,10 +29,10 @@ export const Icon = styled('img') <{}>`
 export const Background = styled('img') <{}>`
     z-index: 0;
     width: 100%;
+    margin-bottom: -10px;
 `;
 
 export const FooterContainer = styled('div') <{}>`
-    position: absolute;
+    position: relative;
     bottom: 0;
-    left: 0;
 `;

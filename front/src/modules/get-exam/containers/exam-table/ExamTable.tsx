@@ -1,12 +1,15 @@
 import React from "react"
+import { Exam } from "../../ducks";
 import GetExam from "../GetExam"
 import { ExamName, Row, ExamButton, ExamContainer, NoExam } from './ExamTableStyles';
+import { initState } from '../../ducks/index';
 
 type ExamTableProps = {
-    list: { name: string, id: string }[],
+    exams: [Exam],
 }
 
-const ExamTable: React.FunctionComponent<ExamTableProps> = ({ list }) => {
+const ExamTable: React.FunctionComponent<ExamTableProps> = ({ exams }) => {
+    const examsExist = JSON.stringify(exams) != JSON.stringify(initState.exams)
     return (
         <React.Fragment>
             <Row style={{
@@ -19,9 +22,8 @@ const ExamTable: React.FunctionComponent<ExamTableProps> = ({ list }) => {
                     <ExamButton>Acción</ExamButton>
                 </ExamContainer>
             </Row>
-
-            {!!list.length &&
-                list.map(function (item, i) {
+            {examsExist &&
+                exams.map(function (item, i) {
                     return (
                         <Row index={i} key={i}>
                             <ExamContainer>
@@ -32,8 +34,7 @@ const ExamTable: React.FunctionComponent<ExamTableProps> = ({ list }) => {
                     );
                 })
             }
-
-            {!!!list.length && <NoExam>¡Felicidades! No tienes exámenes pendientes</NoExam>}
+            {!examsExist && <NoExam>¡Felicidades! No tienes exámenes pendientes</NoExam>}
         </React.Fragment >
     )
 }

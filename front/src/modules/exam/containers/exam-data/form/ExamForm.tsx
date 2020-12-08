@@ -1,98 +1,34 @@
 import React, { useState } from "react";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Question } from '../../../../get-exam/ducks/index';
 import ButtonsResult from "./ButtonResult";
-
-import {
-    RadioGroup,
-    FormControlLabel,
-    Radio,
-
-} from "@material-ui/core";
-
-type Inputs = {
-    example: string;
-    exampleRequired: string;
-};
+import MultipleChoise from '../../../../../components/form/multiple-choice/MultipleChoise';
+import TrueOrFalse from '../../../../../components/form/true-or-false/TrueOrFalse';
+import Input from "../../../../../components/form/input/Input";
 
 type ExamFormsProps = {
     questions: [Question]
 }
-
 enum QuestionType {
     TRUEORFALSE = 'trueOrFalse',
     MULTIPLECHOISE = 'multipleChoise',
     FREE = 'free',
 }
 
-
-const getInputByType = (question: Question, register, id, control) => {
+const getInputByType = (question: Question, register, control) => {
     switch (question.type) {
-
         case QuestionType.TRUEORFALSE:
-            return <section>
-                <Controller
-                    as={
-                        <RadioGroup aria-label={id}>
-
-                            <FormControlLabel
-                                value="VERDADERO"
-                                control={<Radio />}
-                                label="VERDADERO"
-                            />
-                            <FormControlLabel
-                                value="FALSO"
-                                control={<Radio />}
-                                label="FALSO"
-                            />
-                        </RadioGroup>
-                    }
-                    name="TRUEORFALSE"
-                    control={control}
-                />
-            </section>
+            return <TrueOrFalse control={control} question={question} />
         case QuestionType.MULTIPLECHOISE:
-            return <section>
-                <Controller
-                    as={
-                        <RadioGroup aria-label={id}>
-                            {
-                                question.options?.map(function (item, i) {
-                                    return (
-                                        <FormControlLabel
-                                            value={item}
-                                            control={<Radio />}
-                                            label={item}
-                                        />
-                                    );
-                                })
-                            }
-                        </RadioGroup>
-                    }
-                    name="RadioGroup"
-                    control={control}
-                />
-            </section>
-            break;
+            return <MultipleChoise control={control} question={question} />
         default:
-            return <section>
-                <input name={id} className="input" ref={register} />
-            </section>
+            return <Input register={register} question={question} />
     }
 }
-const defaultValues = {
-
-};
 
 const ExamForm: React.FunctionComponent<ExamFormsProps> = ({ questions }) => {
-    console.log(questions);
-    const { handleSubmit, register, reset, control } = useForm({ defaultValues });
-    const onSubmit: SubmitHandler<Inputs> = data => {
-        alert(JSON.stringify(data));
-    }; // your form submit function which will invoke after successful validation
-
+    const { handleSubmit, register, control } = useForm({});
     const [data, setData] = useState(null);
-
     return (
         <form onSubmit={handleSubmit(data => setData(data))} className="form">
             {
@@ -101,16 +37,13 @@ const ExamForm: React.FunctionComponent<ExamFormsProps> = ({ questions }) => {
                         <div key={i}>
                             <div>{i}</div>
                             <div>{item.question}</div>
-                            {getInputByType(item, register, i, control)}
+                            {getInputByType(item, register, control)}
                         </div>
                     );
                 })
             }
-
-            <ButtonsResult {...{ data, reset, defaultValues }} />
+            <ButtonsResult {...{ data }} />
         </form>
-
-
     );
 }
 

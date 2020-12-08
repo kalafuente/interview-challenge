@@ -18,19 +18,36 @@ export type SelectedExam = {
 }
 
 export type Question = {
+    id: string | number;
     type: string,
     question: string;
     options?: [String]
 }
 
 export type ExamsEstate = {
-    exams: [Exam] | null;
-    selectedExam: SelectedExam | null
+    exams: [Exam];
+    selectedExam: SelectedExam
 }
 
-const initState: ExamsEstate = {
-    exams: null,
-    selectedExam: null,
+const initExam = {
+    name: "",
+    id: "",
+}
+
+const initSelectedExam: SelectedExam = {
+    id: "",
+    title: "",
+    description: "",
+    questions: [{ id: "", type: "", question: "" }]
+}
+
+export const initState: ExamsEstate = {
+    exams: [initExam],
+    selectedExam: initSelectedExam,
+}
+
+export type StateType = {
+    exams: ExamsEstate;
 }
 
 //reducer

@@ -6,7 +6,7 @@ const Footer: React.FunctionComponent<{}> = ({ }) => {
     return (
         <React.Fragment>
             <FooterContainer>
-                <Icon src="/logo.png" alt="" />
+                <Icon src="/icono.png" alt="" />
                 <Background src="/fondo.svg" alt="" />
             </FooterContainer>
         </React.Fragment>)
