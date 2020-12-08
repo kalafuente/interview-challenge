@@ -1,28 +1,19 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux";
 import { Title } from "../components/titles/Title"
 import ExamTable from "../modules/get-exam/containers/exam-table/ExamTable"
+import { getExams } from '../modules/get-exam/ducks/index';
 
-function InterviewChallengeApp() {
-    var list: { name: string, id: string }[] = [
-        {
-            name: 'Examen de religion -  Orígenes del mito universal',
-            id: '1'
-        },
-
-        {
-            name: 'Examen de matematicas - Ecuaciones logarítmicas',
-            id: '2'
-        },
-
-        {
-            name: 'Examen de religion',
-            id: '3'
-        },
-    ]
+const InterviewChallengeApp: React.FunctionComponent<{}> = ({ }) => {
+    const state = useSelector((state) => state);
     return <div>
         <Title title='Listado de examenes pendientes' />
-        <ExamTable list={list} />
+        <ExamTable list={state.exams.exams} />
     </div>
 }
 
+
 export default InterviewChallengeApp
+
+
+

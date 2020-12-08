@@ -1,7 +1,6 @@
 import React from "react"
 import GetExam from "../GetExam"
 import { ExamName, Row, ExamButton, ExamContainer, NoExam } from './ExamTableStyles';
-import Router from 'next/router';
 
 type ExamTableProps = {
     list: { name: string, id: string }[],
@@ -27,7 +26,7 @@ const ExamTable: React.FunctionComponent<ExamTableProps> = ({ list }) => {
                         <Row index={i} key={i}>
                             <ExamContainer>
                                 <ExamName>{item.name}</ExamName>
-                                <ExamButton onClick={() => Router.push('/exam')}><GetExam id={item.id} /></ExamButton>
+                                <ExamButton><GetExam id={item.id} /></ExamButton>
                             </ExamContainer>
                         </Row>
                     );

@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect, useDispatch } from 'react-redux'
+import Exam from "../../modules/exam/containers/Exam"
 
 type ExamProps = {
 }
 
-const Exam: React.FunctionComponent<ExamProps> = ({ }) => {
-    const dispatch = useDispatch()
+const ExamPage: React.FunctionComponent<ExamProps> = ({ }) => {
     return <div>
+        <Exam />
         <img src="/fondo.svg" alt="" />
         <img src="/logo.png" alt="" />
 
@@ -14,4 +15,4 @@ const Exam: React.FunctionComponent<ExamProps> = ({ }) => {
 
 }
 
-export default connect()(Exam)
+export default connect()(ExamPage)
