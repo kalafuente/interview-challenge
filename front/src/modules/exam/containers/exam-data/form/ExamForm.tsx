@@ -30,8 +30,27 @@ const getInputByType = (question: Question, register, id, control) => {
     switch (question.type) {
 
         case QuestionType.TRUEORFALSE:
-            // code block
-            break;
+            return <section>
+                <Controller
+                    as={
+                        <RadioGroup aria-label={id}>
+
+                            <FormControlLabel
+                                value="VERDADERO"
+                                control={<Radio />}
+                                label="VERDADERO"
+                            />
+                            <FormControlLabel
+                                value="FALSO"
+                                control={<Radio />}
+                                label="FALSO"
+                            />
+                        </RadioGroup>
+                    }
+                    name="TRUEORFALSE"
+                    control={control}
+                />
+            </section>
         case QuestionType.MULTIPLECHOISE:
             return <section>
                 <Controller
@@ -59,7 +78,6 @@ const getInputByType = (question: Question, register, id, control) => {
             return <section>
                 <input name={id} className="input" ref={register} />
             </section>
-        // tipo: free
     }
 }
 const defaultValues = {
