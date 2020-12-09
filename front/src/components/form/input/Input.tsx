@@ -1,5 +1,5 @@
 import React from "react";
-import { Question } from "../../../modules/get-exam/ducks";
+import { Question } from "../../../ducks";
 
 type InputProps = {
     question: Question,

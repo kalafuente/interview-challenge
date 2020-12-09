@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../components/theme/Theme';
 import withRedux from 'next-redux-wrapper/lib'
 import './index.css';
-import { getExams } from '../modules/get-exam/ducks';
+import { getExams } from '../ducks';
 import withReduxSaga from 'next-redux-saga'
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
-import { Question } from "../../../modules/get-exam/ducks";
+import { Question } from "../../../ducks";
 import { Controller } from "react-hook-form";
 
 type MultipleChoiseProps = {
@@ -21,6 +21,7 @@ const MultipleChoise: React.FunctionComponent<MultipleChoiseProps> = ({ question
                                         value={item}
                                         control={<Radio />}
                                         label={item}
+                                        key={item.toString()}
                                     />
                                 );
                             })

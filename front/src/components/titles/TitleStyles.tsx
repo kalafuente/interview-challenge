@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { FontSize, FontWeight, Color } from '../theme/Theme';
 
 export const TitleStyled = styled('h1') <{}>`
-  margin-top: 45px;
   text-align: center;
   font-size:  ${props => props.theme.fontSize[FontSize.JUMBO]};
   font-weight: ${props => props.theme.fontWeight[FontWeight.BOLD]};

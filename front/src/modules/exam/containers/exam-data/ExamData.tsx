@@ -1,20 +1,16 @@
 import React from 'react';
 import { Title } from '../../../../components/titles/Title';
-import { Question } from '../../../get-exam/ducks';
 import { TitleContainer } from './ExamDataStyles';
 import ExamForm from './form/ExamForm';
+import { SelectedExam } from '../../../../ducks/index';
 
-type ExamProps = {
-    title: string,
-    description: string,
-    questions: [Question]
-}
+type ExamProps = SelectedExam;
 
-const ExamData: React.FunctionComponent<ExamProps> = ({ title, description, questions }) => {
+const ExamData: React.FunctionComponent<ExamProps> = ({ title, description, questions, id }) => {
     return (
         <TitleContainer>
             <Title title={title} subtitle={description} />
-            <ExamForm questions={questions} />
+            <ExamForm questions={questions} id={id} />
         </TitleContainer>
     )
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect, useDispatch } from 'react-redux'
 import { Button, ButtonTypes } from '../../../components/button/Button';
-import { getExam } from '../ducks/index';
+import { getExam } from '../../../ducks/index';
 
 type GetExamProps = {
-    id: string | number;
+    id: string;
 }
 
 const GetExam: React.FunctionComponent<GetExamProps> = ({ id }) => {

@@ -1,7 +1,7 @@
 
 import { Item, RadioButtonStyled } from './TrueOrFalseStyles';
 import React from "react";
-import { Question } from "../../../modules/get-exam/ducks";
+import { Question } from "../../../ducks";
 import { Controller } from 'react-hook-form';
 import { RadioGroup, FormControlLabel, Radio } from '@material-ui/core';
 

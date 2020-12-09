@@ -1,27 +1,41 @@
-import { createEmitAndSemanticDiagnosticsBuilderProgram } from "typescript"
-import { ActionCreator } from "../../../models/ActionCreator"
+import { ActionCreator } from "../models/ActionCreator"
 
 //actions
 export const GET_EXAMS: string = 'GET_EXAMS'
 export const GET_EXAM: string = 'GET_EXAM'
 export const SET_EXAM: string = 'SET_EXAM'
 export const SET_EXAMS: string = 'SET_EXAMS'
+export const SET_RESULT: string = 'SET_RESULT'
+export const SEND_EXAM: string = 'SEND_EXAM'
+export const GO_TO_HOME: string = 'GO_TO_HOME'
+export const CLEAR_EXAM: string = 'CLEAR_EXAM'
+
 
 export type Exam = {
     name: string, id: string
 }
 export type SelectedExam = {
-    id: string | number;
+    id: string;
     title: string;
     description: string,
-    questions: [Question]
+    questions: [Question],
+    result?: string
 }
 
 export type Question = {
-    id: string | number;
+    id: string;
     type: string,
     question: string;
     options?: [String]
+}
+export type QuestionResponse = {
+    id: string,
+    response: string
+}
+
+export type ResolvedExam = {
+    examId: string;
+    questions: [QuestionResponse]
 }
 
 export type ExamsEstate = {
@@ -53,7 +67,7 @@ export type StateType = {
 //reducer
 export function exams(state: ExamsEstate = initState, action: ActionCreator): ExamsEstate {
     switch (action.type) {
-        case 'SET_EXAM':
+        case SET_EXAM:
             return {
                 ...state,
                 exams: state.exams,
@@ -64,11 +78,24 @@ export function exams(state: ExamsEstate = initState, action: ActionCreator): Ex
                     questions: action.questions,
                 }
             }
-        case 'SET_EXAMS':
+        case SET_EXAMS:
             return {
                 ...state,
                 exams: action.exams,
                 selectedExam: state.selectedExam
+            }
+        case SET_RESULT:
+            return {
+                ...state,
+                selectedExam: {
+                    ...state.selectedExam,
+                    result: action.result
+                }
+            }
+        case CLEAR_EXAM:
+            return {
+                ...state,
+                selectedExam: initSelectedExam
             }
         default:
             return state
@@ -89,10 +116,28 @@ export const setExams = (exams: [Exam]) => ({
     exams: exams
 })
 
-export const getExam = (id: string | number) => ({
+export const getExam = (id: string) => ({
     type: GET_EXAM,
     id: id,
 })
 export const getExams = () => ({
     type: GET_EXAMS,
+})
+
+export const sendExam = (resolvedExam: ResolvedExam) => ({
+    type: SEND_EXAM,
+    examResolved: resolvedExam
+})
+
+export const setResult = (result: string) => ({
+    type: SET_RESULT,
+    result: result,
+})
+
+export const goToHome = () => ({
+    type: GO_TO_HOME,
+})
+
+export const clearExamSelected = () => ({
+    type: CLEAR_EXAM,
 })

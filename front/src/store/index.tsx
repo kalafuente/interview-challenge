@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
 import { combineReducers } from 'redux'
-import { exams } from '../modules/get-exam/ducks'
+import { exams } from '../ducks'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Store } from 'redux'
 import createSagaMiddleware from 'redux-saga'

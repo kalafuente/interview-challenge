@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Question } from '../../../../get-exam/ducks/index';
-import ButtonsResult from "./ButtonResult";
+import { Question } from '../../../../../ducks/index';
 import MultipleChoise from '../../../../../components/form/multiple-choice/MultipleChoise';
 import TrueOrFalse from '../../../../../components/form/true-or-false/TrueOrFalse';
 import Input from "../../../../../components/form/input/Input";
+import FormButton from './ButtonResult';
 
 type ExamFormsProps = {
-    questions: [Question]
+    questions: [Question],
+    id: string;
 }
+
 enum QuestionType {
     TRUEORFALSE = 'trueOrFalse',
     MULTIPLECHOISE = 'multipleChoise',
     FREE = 'free',
 }
 
-const getInputByType = (question: Question, register, control) => {
+const getInputByType = (question: Question, register: any, control: any) => {
     switch (question.type) {
         case QuestionType.TRUEORFALSE:
             return <TrueOrFalse control={control} question={question} />
@@ -25,8 +27,7 @@ const getInputByType = (question: Question, register, control) => {
             return <Input register={register} question={question} />
     }
 }
-
-const ExamForm: React.FunctionComponent<ExamFormsProps> = ({ questions }) => {
+const ExamForm: React.FunctionComponent<ExamFormsProps> = ({ questions, id }) => {
     const { handleSubmit, register, control } = useForm({});
     const [data, setData] = useState(null);
     return (
@@ -42,7 +43,7 @@ const ExamForm: React.FunctionComponent<ExamFormsProps> = ({ questions }) => {
                     );
                 })
             }
-            <ButtonsResult {...{ data }} />
+            <FormButton data={data} examId={id} />
         </form>
     );
 }
