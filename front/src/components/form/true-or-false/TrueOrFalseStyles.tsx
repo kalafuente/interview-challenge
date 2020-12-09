@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { FontSize } from '../../theme/Theme';
 
-export const Item = styled('div') <{}>`
+export const Item = styled('div') <{ first?: boolean }>`
     display: inline-block;
     max-width: 260px;
     border-radius: 4px;
@@ -9,12 +9,18 @@ export const Item = styled('div') <{}>`
     font-size:  ${props => props.theme.fontSize[FontSize.BASE]};
     padding-left: 15px;
 
+    @media ${props => props.theme.device.xs.max}{
+        max-width: 100%;
+        ${props => props.first && css`
+            margin-bottom: 15px;
+        `}
+    }
     @media ${props => props.theme.device.xs.min}{
         width: 100%;
         margin-right: 0;
     }
     @media ${props => props.theme.device.sm.min}{
-        min-width: 195px;
+        max-width: 195px;
         margin-right: 30px;
     }
     @media ${props => props.theme.device.lg.min}{

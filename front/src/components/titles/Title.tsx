@@ -15,16 +15,14 @@ export class Title extends React.PureComponent<TitleProps>  {
     render() {
         const { title, subtitle } = this.props
         return (
-            <React.Fragment>
-                <ContainerStyled>
-                    <TitleStyled>
-                        {title}
-                    </TitleStyled>
-                    {subtitle && <SubtitleStyled>
-                        {subtitle}
-                    </SubtitleStyled>}
-                </ContainerStyled>
-            </React.Fragment>
+            <ContainerStyled>
+                <TitleStyled>
+                    {title}
+                </TitleStyled>
+                {subtitle && <SubtitleStyled>
+                    {subtitle}
+                </SubtitleStyled>}
+            </ContainerStyled>
         );
     }
 }

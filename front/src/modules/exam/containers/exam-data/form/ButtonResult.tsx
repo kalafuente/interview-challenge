@@ -24,7 +24,7 @@ const getQuestionsFormated = (data: any): [QuestionResponse] => {
 const FormButton: React.FunctionComponent<FromDataProps> = ({ data, examId }) => {
     const dispatch = useDispatch()
     return (
-        <Button type='submit' text="Responder" styleType={ButtonTypes.PRIMARY} onClick={() => dispatch(sendExam(
+        <Button type='submit' text="Finalizar" styleType={ButtonTypes.PRIMARY} onClick={() => dispatch(sendExam(
             {
                 examId: examId,
                 questions: getQuestionsFormated(data)

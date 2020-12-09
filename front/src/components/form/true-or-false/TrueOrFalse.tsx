@@ -17,7 +17,7 @@ const TrueOrFalse: React.FunctionComponent<TrueOrFalseProps> = ({ question, cont
                 as={
                     <RadioButtonStyled>
                         <RadioGroup aria-label={"TrueOrFalso".concat(question.id.toString())}>
-                            <Item>
+                            <Item first={true}>
                                 <FormControlLabel
                                     value="true"
                                     control={<Radio />}
@@ -31,6 +31,8 @@ const TrueOrFalse: React.FunctionComponent<TrueOrFalseProps> = ({ question, cont
                                     label="Falso"
                                 />
                             </Item>
+
+
                         </RadioGroup>
                     </RadioButtonStyled>
 

@@ -23,5 +23,8 @@ export const ResultContainer = styled('div') <{}>`
 
 export const ButtonContainer = styled('div') <{}>`
     margin-top: 30px;
+    max-width: 155px;
+    margin-left: auto;
+    margin-right: auto;
 `;
 

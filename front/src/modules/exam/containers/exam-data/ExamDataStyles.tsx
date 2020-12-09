@@ -1,17 +1,28 @@
 import styled from 'styled-components'
 
-
 export const TitleContainer = styled('div') <{}>`
+    position:relative;
     @media ${props => props.theme.device.xs.min}{
-        margin: 0 30px 45px 30px;
+        margin: 45px 30px 45px 30px;
     }
     @media ${props => props.theme.device.sm.min}{
-        margin: 0 45px 45px 45px;
+        margin-top: 45px;
+        margin-left: auto;
+        margin-right: auto;  
+        max-width: 570px;
+
     }
     @media ${props => props.theme.device.lg.min}{
-        margin: 0 191px 45px 191px;
+        margin-top: 45px;
+        margin-left: auto;
+        margin-right: auto;  
+        max-width: 610px;
+
     }
     @media ${props => props.theme.device.xl.min}{
-        margin: 0 345px 60px 345px;
+        margin-top: 45px;
+        margin-left: auto;
+        margin-right: auto;  
+        max-width: 749px;
     }
 `;

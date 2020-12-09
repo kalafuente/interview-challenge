@@ -19,24 +19,16 @@ export const ExamContainer = styled('div') <{}>`
 export const ExamName = styled('div') <{}>`
     display: inline-block;
     @media ${props => props.theme.device.xs.min}{
-        color: red;
         min-width: 172px;
     }
     @media ${props => props.theme.device.sm.min}{
     min-width: 339px;
-    color: blue;
-    }
-    @media ${props => props.theme.device.md.min}{
-        color: pink;
-    min-width: 480px;
     }
     @media ${props => props.theme.device.lg.min}{
-        color: black;
         min-width: 640px;
       }
     @media ${props => props.theme.device.xl.min}{
         min-width: 780px;
-        color: green;
     }
 `;
 
@@ -48,9 +40,6 @@ export const ExamButton = styled('div') <{}>`
     }
     @media ${props => props.theme.device.sm.min}{
         padding-right: 50px;
-    }
-    @media ${props => props.theme.device.md.min}{
-        margin-right: 9px;    
     }
     @media ${props => props.theme.device.lg.min}{
         }

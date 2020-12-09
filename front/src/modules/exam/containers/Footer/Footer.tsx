@@ -1,10 +1,9 @@
 import React, { } from 'react';
-import { Background, FooterContainer, Icon } from './FooterStyles';
+import { Background, FooterContainer } from './FooterStyles';
 
 const Footer: React.FunctionComponent<{}> = ({ }) => {
     return (
         <FooterContainer>
-            <Icon src="/icono.png" alt="" />
             <Background src="/fondo.svg" alt="" />
         </FooterContainer>
     )

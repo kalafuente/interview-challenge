@@ -9,6 +9,7 @@ export const ButtonStyled = styled('button') <{ styleType: string }>`
   box-shadow: 0 2px 1px 0 rgba(64, 64, 64, 0.15);
   font-family: 'Open Sans';
   cursor: pointer;
+  width: 100%;
   
   ${props => props.styleType == ButtonTypes.PRIMARY && css`
       background: ${props => props.theme.colors[Color.PRIMARY]};

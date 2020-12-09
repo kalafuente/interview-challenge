@@ -5,6 +5,8 @@ import MultipleChoise from '../../../../../components/form/multiple-choice/Multi
 import TrueOrFalse from '../../../../../components/form/true-or-false/TrueOrFalse';
 import Input from "../../../../../components/form/input/Input";
 import FormButton from './ButtonResult';
+import { ButtonContainer, Icon, IconButtonContainer, QuestionContainer } from "./ExamFormStyles";
+import QuestionTitle from '../../../../../components/form/question-title/QuestionTitle';
 
 type ExamFormsProps = {
     questions: [Question],
@@ -30,20 +32,25 @@ const getInputByType = (question: Question, register: any, control: any) => {
 const ExamForm: React.FunctionComponent<ExamFormsProps> = ({ questions, id }) => {
     const { handleSubmit, register, control } = useForm({});
     const [data, setData] = useState(null);
+    const examsLength: number = questions.length
     return (
         <form onSubmit={handleSubmit(data => setData(data))} className="form">
             {
                 questions.map(function (item, i) {
                     return (
-                        <div key={i}>
-                            <div>{i}</div>
-                            <div>{item.question}</div>
+                        <QuestionContainer key={i}>
+                            <QuestionTitle total={examsLength} numeration={i + 1} question={item.question} />
                             {getInputByType(item, register, control)}
-                        </div>
+                        </QuestionContainer>
                     );
                 })
             }
-            <FormButton data={data} examId={id} />
+            <IconButtonContainer>
+                <Icon src="/icono.png" alt="" />
+                <ButtonContainer>
+                    <FormButton data={data} examId={id} />
+                </ButtonContainer>
+            </IconButtonContainer>
         </form>
     );
 }
