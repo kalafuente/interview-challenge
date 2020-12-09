@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const TitleContainer = styled('div') <{}>`
+export const ExamContainer = styled('div') <{}>`
     position:relative;
     @media ${props => props.theme.device.xs.min}{
         margin: 45px 30px 45px 30px;
