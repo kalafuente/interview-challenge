@@ -1,10 +1,4 @@
 
 ## interview challenge by karen
-
-### `yarn dev`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Para correr el front, luego de levantar el mock que se encuentra en la carpeta documents, situarse en code/front y correr `yarn dev`
+Luego abrir [http://localhost:3000](http://localhost:3000) 
