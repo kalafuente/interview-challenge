@@ -20,36 +20,19 @@ const colors = {
 
 /*
 rems @16px
-mega      40px Monserrat
-huge      35px Monserrat
-giant     30px Monserrat
-jumbo     25px Monserrat
-biggest   22px Monserrat
-bigger    19px Monserrat
-big       17px Open Sans
-base      15px Open Sans
-small     13px Open Sans
-smaller   11px Open Sans
-smallest  10px Open Sans
-micro      9px Open Sans
+huge      35px  
+giant     30px  
+jumbo     25px  
+biggest   22px  
+bigger    19px  
+big       17px  
+base      15px  
+small     13px  
+smaller   11px  
+smallest  10px  
 */
 
-export enum Font {
-    FAMILY_BASE = 'familyBase',
-    FAMILY_TITLE = 'familyTitle',
-    COLOR_DARK = 'colorDark',
-    COLOR_LIGHT = 'colorLight',
-}
-
-const font = {
-    familyBase: '"Open Sans", sans-serif',
-    familyTitle: '"Montserrat", "Open Sans", sans-serif',
-    colorDark: '#404040',
-    colorLight: '#fff',
-}
-
 export enum FontSize {
-    MEGA = 'mega',
     HUGE = 'huge',
     GIANT = 'giant',
     JUMBO = 'jumbo',
@@ -60,10 +43,8 @@ export enum FontSize {
     SMALL = 'small',
     SMALLER = 'smaller',
     SMALLEST = 'smallest',
-    MICRO = 'micro',
 }
 const fontSize = {
-    [FontSize.MEGA]: '2.469rem',
     [FontSize.HUGE]: '2.168rem',
     [FontSize.GIANT]: '1.905rem',
     [FontSize.JUMBO]: '1.568rem',
@@ -74,7 +55,6 @@ const fontSize = {
     [FontSize.SMALL]: '0.82rem',
     [FontSize.SMALLER]: '0.675rem',
     [FontSize.SMALLEST]: '0.632rem',
-    [FontSize.MICRO]: '0.556rem',
 }
 
 export enum FontWeight {
@@ -92,28 +72,6 @@ const fontWeight = {
     [FontWeight.EXTRABOLD]: 800,
 }
 
-export const breakpointSizes = {
-    xxs: {
-        min: 0,
-        max: 576,
-    },
-    xs: {
-        min: 577,
-        max: 767,
-    },
-    sm: {
-        min: 768,
-        max: 991,
-    },
-    md: {
-        min: 992,
-        max: 1199,
-    },
-    lg: {
-        min: 1200,
-        max: 200000,
-    },
-}
 export const device = {
     xs: {
         min: `(min-width: 0px)`,
@@ -140,9 +98,7 @@ export const device = {
 
 const theme = {
     roundedCorners,
-    breakpointSizes,
     colors,
-    font,
     fontSize,
     fontWeight,
     device
