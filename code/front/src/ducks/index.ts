@@ -1,4 +1,5 @@
 import { ActionCreator } from "../models/ActionCreator"
+import { Exam, ExamsEstate, ResolvedExam, SelectedExam } from "../models/Exam"
 
 //actions
 export const GET_EXAMS: string = 'GET_EXAMS'
@@ -9,39 +10,6 @@ export const SET_RESULT: string = 'SET_RESULT'
 export const SEND_EXAM: string = 'SEND_EXAM'
 export const GO_TO_HOME: string = 'GO_TO_HOME'
 export const CLEAR_EXAM: string = 'CLEAR_EXAM'
-
-
-export type Exam = {
-    name: string, id: string
-}
-export type SelectedExam = {
-    id: string;
-    title: string;
-    description: string,
-    questions: [Question],
-    result?: string
-}
-
-export type Question = {
-    id: string;
-    type: string,
-    question: string;
-    options?: [String]
-}
-export type QuestionResponse = {
-    id: string,
-    response: string
-}
-
-export type ResolvedExam = {
-    examId: string;
-    questions: [QuestionResponse]
-}
-
-export type ExamsEstate = {
-    exams: [Exam];
-    selectedExam: SelectedExam
-}
 
 const initExam = {
     name: "",
@@ -58,10 +26,6 @@ const initSelectedExam: SelectedExam = {
 export const initState: ExamsEstate = {
     exams: [initExam],
     selectedExam: initSelectedExam,
-}
-
-export type StateType = {
-    exams: ExamsEstate;
 }
 
 //reducer

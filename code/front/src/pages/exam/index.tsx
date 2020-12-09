@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect, useSelector } from 'react-redux'
-import ExamData from '../../modules/exam/Exam';
+import Exam from '../../modules/exam/Exam';
 import Footer from '../../modules/exam/footer/Footer';
-import { initState, SelectedExam } from '../../ducks';
-import { StateType } from '../../ducks/index';
+import { initState } from '../../ducks';
 import Result from '../../modules/exam/result/Result';
+import { SelectedExam, StateType } from '../../models/Exam';
 
 const ExamPage: React.FunctionComponent<{}> = ({ }) => {
     const exam: SelectedExam = useSelector((state: StateType) => state.exams.selectedExam);
@@ -13,7 +13,7 @@ const ExamPage: React.FunctionComponent<{}> = ({ }) => {
         {
             examExist && !exam.result &&
             <React.Fragment>
-                <ExamData title={exam.title} description={exam.description}
+                <Exam title={exam.title} description={exam.description}
                     questions={exam.questions} id={exam.id}
                 />
                 <Footer />

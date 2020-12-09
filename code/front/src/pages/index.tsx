@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux";
-import { StateType } from "../ducks";
+import { StateType } from "../models/Exam";
 import Exams from '../modules/exams/Exams';
 
 const ListOfExamsPage: React.FunctionComponent<{}> = ({ }) => {

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Question } from '../../../ducks/index';
 import MultipleChoise from '../../../components/form/multiple-choice/MultipleChoise';
 import TrueOrFalse from '../../../components/form/true-or-false/TrueOrFalse';
 import Input from "../../../components/form/input/Input";
 import FormButton from './button/ButtonResult';
 import { ButtonContainer, Icon, IconButtonContainer, QuestionContainer } from "./ExamFormStyles";
 import QuestionTitle from '../../../components/form/question-title/QuestionTitle';
+import { Question } from "../../../models/Exam";
 
 type ExamFormsProps = {
     questions: [Question],
