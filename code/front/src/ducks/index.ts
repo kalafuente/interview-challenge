@@ -103,9 +103,9 @@ export function exams(state: ExamsEstate = initState, action: ActionCreator): Ex
 }
 
 // action creators
-export const setExam = (id: string, exam: { title: string, description: string, questions: [] }) => ({
+export const setExam = (exam: SelectedExam) => ({
     type: SET_EXAM,
-    id: id,
+    id: exam.id,
     title: exam.title,
     description: exam.description,
     questions: exam.questions,

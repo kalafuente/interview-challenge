@@ -6,7 +6,7 @@ export function* getExamSaga(action) {
   const url = "http://localhost:4000/exams-information/".concat(action.id)
   try {
     const response = yield axios.get(url)
-    yield put(setExam(action.id, response.data))
+    yield put(setExam(response.data))
   } catch {
     console.log("entre al catch!!")
     //Debería hacer una página de error o algo así, pero no está en el diseño
