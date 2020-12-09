@@ -1,7 +1,7 @@
 import React from "react"
 import Title from "../../components/titles/Title";
 import { Exam } from "../../ducks";
-import ExamTable from "../get-exam/containers/exam-table/ExamTable";
+import ExamTable from "./exam-table/ExamTable";
 import { TitleContainer } from "./ExamsStyles";
 
 type ExamProps = {

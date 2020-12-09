@@ -1,8 +1,8 @@
 import React from "react"
-import { Exam } from "../../../../ducks";
-import GetExam from "../GetExam"
+import { Exam } from "../../../ducks";
+import GetExam from "./get-exam/GetExam"
 import { ExamName, Row, ExamButton, ExamContainer, NoExam } from './ExamTableStyles';
-import { initState } from '../../../../ducks/index';
+import { initState } from '../../../ducks/index';
 
 type ExamTableProps = {
     exams: [Exam],

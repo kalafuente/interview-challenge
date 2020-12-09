@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects'
-import { watchGetExam } from '../modules/get-exam/saga/watchGetExam';
-import { watchSetExam } from '../modules/get-exam/saga/watchSetExam';
-import { watchGetExams } from '../modules/get-exam/saga/watchGetExams';
+import { watchGetExam } from '../modules/exams/saga/watchGetExam';
+import { watchSetExam } from '../modules/exams/saga/watchSetExam';
+import { watchGetExams } from '../modules/exams/saga/watchGetExams';
 import { watchSendExam } from '../modules/exam/saga/watchSendExam';
 import { watchGoToHome } from '../modules/exam/saga/watchGoToHome';
 

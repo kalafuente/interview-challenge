@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Box } from '@rebass/grid'
-import { FontSize, Color, FontWeight } from '../../../../components/theme/Theme';
+import { FontSize, Color, FontWeight } from '../../../components/theme/Theme';
 export const ExamContainer = styled('div') <{}>`
     display: flex;
     align-items: center;

@@ -1,6 +1,5 @@
 import { put, takeEvery } from 'redux-saga/effects'
 import { GET_EXAM, setExam } from '../../../ducks/index';
-import Router from 'next/router';
 const axios = require('axios').default;
 
 export function* getExamSaga(action) {
