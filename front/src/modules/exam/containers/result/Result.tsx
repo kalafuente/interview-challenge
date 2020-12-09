@@ -1,6 +1,6 @@
 import React, { } from 'react';
-import { Button } from '../../../../components/button/Button';
-import { ButtonTypes, Title } from '../../../../components/titles/Title';
+import Button from '../../../../components/button/Button';
+import Title, { ButtonTypes } from '../../../../components/titles/Title';
 import { ButtonContainer, ResultContainer } from './ResultStyles';
 import { useDispatch } from "react-redux";
 import { goToHome } from '../../../../ducks/index';

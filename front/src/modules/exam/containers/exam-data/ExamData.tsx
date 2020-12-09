@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title } from '../../../../components/titles/Title';
+import Title from '../../../../components/titles/Title';
 import { TitleContainer } from './ExamDataStyles';
 import ExamForm from './form/ExamForm';
 import { SelectedExam } from '../../../../ducks/index';

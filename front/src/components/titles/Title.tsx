@@ -11,18 +11,16 @@ type TitleProps = {
     subtitle?: string,
 }
 
-export class Title extends React.PureComponent<TitleProps>  {
-    render() {
-        const { title, subtitle } = this.props
-        return (
-            <ContainerStyled>
-                <TitleStyled>
-                    {title}
-                </TitleStyled>
-                {subtitle && <SubtitleStyled>
-                    {subtitle}
-                </SubtitleStyled>}
-            </ContainerStyled>
-        );
-    }
+const Title: React.FunctionComponent<TitleProps> = ({ title, subtitle }) => {
+    return (
+        <ContainerStyled>
+            <TitleStyled>
+                {title}
+            </TitleStyled>
+            {subtitle && <SubtitleStyled>
+                {subtitle}
+            </SubtitleStyled>}
+        </ContainerStyled>
+    );
 }
+export default Title

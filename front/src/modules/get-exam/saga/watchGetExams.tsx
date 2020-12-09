@@ -1,5 +1,4 @@
 import { put, takeEvery } from 'redux-saga/effects'
-import { createSemicolonClassElement } from 'typescript';
 import { GET_EXAMS, setExams } from '../../../ducks/index';
 const axios = require('axios').default;
 

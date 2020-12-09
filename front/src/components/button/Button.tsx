@@ -13,13 +13,13 @@ type ButtonProps = {
     onClick?: () => void;
 }
 
-export class Button extends React.PureComponent<ButtonProps>  {
-    render() {
-        const { text, styleType, onClick } = this.props
-        return (
-            <ButtonStyled styleType={styleType} onClick={onClick}>
-                {text}
-            </ButtonStyled>
-        );
-    }
+const Button: React.FunctionComponent<ButtonProps> = ({ text, styleType, type, onClick }) => {
+    return (
+        <ButtonStyled styleType={styleType} onClick={onClick} >
+            { text}
+        </ButtonStyled >
+    );
+
 }
+
+export default Button
