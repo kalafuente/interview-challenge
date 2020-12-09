@@ -13,15 +13,14 @@ const Result: React.FunctionComponent<ResultProps> = ({ result }) => {
     const dispatch = useDispatch()
     const text: string = "El resultado de la evaluación es de ".concat(result).concat(" puntos")
     return (
-        <React.Fragment>
-            <ResultContainer>
-                <Title title={text} subtitle="Muchas gracias por completar esta evaluación." />
-                <ButtonContainer>
-                    <Button type='submit' text="Volver al listado" styleType={ButtonTypes.PRIMARY}
-                        onClick={() => dispatch(goToHome())} />
-                </ButtonContainer>
-            </ResultContainer>
-        </React.Fragment>)
+        <ResultContainer>
+            <Title title={text} subtitle="Muchas gracias por completar esta evaluación." />
+            <ButtonContainer>
+                <Button type='submit' text="Volver al listado" styleType={ButtonTypes.PRIMARY}
+                    onClick={() => dispatch(goToHome())} />
+            </ButtonContainer>
+        </ResultContainer>
+    )
 }
 
 export default Result

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import Button, { ButtonTypes } from "../../../components/button/Button";
-import { QuestionResponse, sendExam } from "../../../ducks";
+import Button, { ButtonTypes } from "../../../../components/button/Button";
+import { QuestionResponse, sendExam } from "../../../../ducks";
 
 type FromDataProps = {
     data: any;
