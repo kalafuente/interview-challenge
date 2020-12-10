@@ -31,8 +31,6 @@ const TrueOrFalse: React.FunctionComponent<TrueOrFalseProps> = ({ question, cont
                                     label="Falso"
                                 />
                             </Item>
-
-
                         </RadioGroup>
                     </RadioButtonStyled>
 
