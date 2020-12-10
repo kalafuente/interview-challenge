@@ -23,8 +23,8 @@ App.getInitialProps = async (context): Promise<any> => {
     const url = "http://localhost:4000/exams"
     const response = axios.get(url)
     await response.then(
-        function (valor) {
-            store.dispatch(setExams(valor.data.exams));
+        function (apiResponse) {
+            store.dispatch(setExams(apiResponse.data.exams));
         }
     )
     return { store };
