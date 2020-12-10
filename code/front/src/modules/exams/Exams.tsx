@@ -2,8 +2,6 @@ import React from "react"
 import Title from "../../components/titles/Title";
 import ExamTable from "./exam-table/ExamTable";
 import { TitleContainer } from "./ExamsStyles";
-import { useDispatch } from "react-redux";
-import { clearExamSelected } from "../../ducks";
 import { Exam } from '../../models/Exam';
 
 type ExamProps = {
@@ -11,6 +9,7 @@ type ExamProps = {
 };
 
 const Exams: React.FunctionComponent<ExamProps> = ({ exams }) => {
+    //debería chequear si hay error y mostrarle otra cosa {error&&<ComponenteDeError/>}
     return (
         <React.Fragment>
             <TitleContainer>
