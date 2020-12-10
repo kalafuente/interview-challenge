@@ -1,9 +1,8 @@
-import { put, takeEvery } from 'redux-saga/effects'
-import { clearExamSelected, GO_TO_HOME } from '../../../ducks/index';
+import { takeEvery } from 'redux-saga/effects'
+import { GO_TO_HOME } from '../../../ducks/index';
 import Router from 'next/router';
 
 export function* goToHomeSaga(action) {
-    yield put(clearExamSelected())
     Router.push('/');
 }
 

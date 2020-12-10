@@ -1,8 +1,9 @@
 import { put, takeEvery } from 'redux-saga/effects'
-import { GET_EXAM, setExam } from '../../../ducks/index';
+import { clearExamSelected, GET_EXAM, setExam } from '../../../ducks/index';
 const axios = require('axios').default;
 
 export function* getExamSaga(action) {
+  yield put(clearExamSelected());
   const url = "http://localhost:4000/exams-information/".concat(action.id)
   try {
     const response = yield axios.get(url)

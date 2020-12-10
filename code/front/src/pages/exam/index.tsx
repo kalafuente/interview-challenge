@@ -23,7 +23,7 @@ const ExamPage: React.FunctionComponent<{}> = ({ }) => {
             examExist && exam.result && <Result result={exam.result} />
         }
         {
-            !examExist && <div>Ha ocurrido un error</div>
+            !examExist && <div>No hay examen cargado</div>
         }
     </React.Fragment>
 }

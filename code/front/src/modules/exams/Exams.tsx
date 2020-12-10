@@ -2,7 +2,9 @@ import React from "react"
 import Title from "../../components/titles/Title";
 import ExamTable from "./exam-table/ExamTable";
 import { TitleContainer } from "./ExamsStyles";
-import Exam from '../exam/Exam';
+import { useDispatch } from "react-redux";
+import { clearExamSelected } from "../../ducks";
+import { Exam } from '../../models/Exam';
 
 type ExamProps = {
     exams: [Exam]
