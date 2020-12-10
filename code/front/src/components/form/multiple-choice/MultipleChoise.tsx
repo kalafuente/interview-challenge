@@ -1,7 +1,7 @@
 import React from "react";
 import { RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
-import { Question } from "../../../ducks";
 import { Controller } from "react-hook-form";
+import { Question } from "../../../models/Exam";
 
 type MultipleChoiseProps = {
     question: Question,
