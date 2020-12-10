@@ -5,8 +5,9 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../components/theme/Theme';
 import withRedux from 'next-redux-wrapper/lib'
 import './index.css';
-import { getExams } from '../ducks';
+import { getExams, setExams } from '../ducks';
 import withReduxSaga from 'next-redux-saga'
+const axios = require('axios').default;
 
 
 function App({ Component, pageProps, store }) {
@@ -19,7 +20,13 @@ function App({ Component, pageProps, store }) {
 
 App.getInitialProps = async (context): Promise<any> => {
     const store = context.ctx.store;
-    store.dispatch(getExams());
+    const url = "http://localhost:4000/exams"
+    const response = axios.get(url)
+    await response.then(
+        function (valor) {
+            store.dispatch(setExams(valor.data.exams));
+        }
+    )
     return { store };
 }
 
